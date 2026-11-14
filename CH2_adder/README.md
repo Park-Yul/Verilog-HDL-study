@@ -6,18 +6,7 @@
 
 하위 4비트 블록 `FA4_0`은 자리올림 입력을 0에서 시작합니다. 하위 블록에서 나온 `c1`은 상위 4비트 블록 `FA4_1`로 전달됩니다. 최종 결과는 8비트 합 `s`와 자리올림 `c`로 나뉩니다.
 
-```mermaid
-flowchart LR
-    L["하위 4비트 입력"] -->|"a[3:0], b[3:0]"| F0["FA4_0 · full_adder_4bit"]
-    Z["0"] -->|cin| F0
-    H["상위 4비트 입력"] -->|"a[7:4], b[7:4]"| F1["FA4_1 · full_adder_4bit"]
-    F0 -->|c1| F1
-    F0 -->|"s[3:0]"| SL["하위 합"]
-    F1 -->|"s[7:4]"| SH["상위 합"]
-    F1 -->|c| C["최종 자리올림"]
-```
-
-draw.io PNG 로컬 경로 · `C:/Users/kccistc/.codex/visualizations/2026/11/14/01a1d8f8-19cc-7480-a8d5-f0ee0dee9ab8/ch2-adder.drawio.png`  
+![8비트 가산기와 하위 가산기 모듈의 신호 및 자리올림 연결](/C:/Users/kccistc/.codex/visualizations/2026/11/14/01a1d8f8-19cc-7480-a8d5-f0ee0dee9ab8/ch2-adder.drawio.png)
 PNG에는 8비트 상위 구조와 함께 4비트 가산기, 1비트 전가산기, 반가산기의 신호 연결도 담았습니다.
 
 ## 모듈 구성

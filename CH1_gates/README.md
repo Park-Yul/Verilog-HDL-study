@@ -6,20 +6,7 @@ Verilog로 디지털 회로의 기본 연산 7가지를 구현했습니다. 1비
 
 `gates`는 같은 입력으로 7개 출력을 동시에 계산하는 조합논리 모듈입니다.
 
-```mermaid
-flowchart LR
-    A[입력 A] -->|a| G[gates]
-    B[입력 B] -->|b| G
-    G -->|y0| AND[AND]
-    G -->|y1| NAND[NAND]
-    G -->|y2| OR[OR]
-    G -->|y3| NOR[NOR]
-    G -->|y4| XOR[XOR]
-    G -->|y5| XNOR[XNOR]
-    G -->|y6| NOT[NOT b]
-```
-
-draw.io PNG 로컬 경로 · `C:/Users/kccistc/.codex/visualizations/2026/11/14/01a1d8f8-19cc-7480-a8d5-f0ee0dee9ab8/ch1-gates.drawio.png`
+![gates 모듈의 입력 a, b와 일곱 논리 게이트 출력 y0~y6](/C:/Users/kccistc/.codex/visualizations/2026/11/14/01a1d8f8-19cc-7480-a8d5-f0ee0dee9ab8/ch1-gates.drawio.png)
 
 ## 설계와 시뮬레이션
 
