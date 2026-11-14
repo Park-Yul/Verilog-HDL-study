@@ -22,7 +22,7 @@ module tb_fnd;
         fnd_in = 8'd123;
         #10;
         reset = 1'b0;
-        #(500_000 * 11);  // check 2 cycle
+        #(500_000 * 11);  // check 6 cycle
         $stop;
     end
 endmodule
