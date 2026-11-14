@@ -5,7 +5,7 @@ module tb_adder;
     wire [7:0] s;
     wire c;
 
-    addder DUT (
+    adder DUT (
     .a (a),
     .b (b),
     .s (s),

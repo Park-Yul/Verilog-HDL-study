@@ -1,4 +1,5 @@
 `timescale 1ns / 1ps
+// `define BIT_4
 module adder(
     input   [7:0] a, b,
     output  [7:0] s,
@@ -26,7 +27,9 @@ endmodule
 
 module full_adder_4bit (
     input   [3:0] a, b,
+    `ifndef BIT_4
     input   cin,
+    `endif
     output  [3:0] s,
     output  c
 );
@@ -37,7 +40,11 @@ module full_adder_4bit (
     full_adder FA0 (
         .a  (a[0]),
         .b  (b[0]),
+        `ifdef BIT_4
+        .cin(1'b0),
+        `else
         .cin(cin),
+        `endif
         .s  (s[0]),
         .c  (c1)
     );
