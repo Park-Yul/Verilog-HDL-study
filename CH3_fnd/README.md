@@ -25,4 +25,4 @@ Vivado 2020.2에서 [CH3_fnd.xpr](CH3_fnd.xpr)를 열고 **Run Simulation → Ru
 | 100의 자리 | 1 | `1011` | `8'hF9` |
 | 1000의 자리 | 0 | `0111` | `8'hC0` |
 
-테스트벤치는 파형 관찰용이며 [파형 설정 파일](waveform/tb_fnd_behav.wcfg)을 포함합니다. [Basys 3 제약 파일](fnd.xdc)의 입출력 핀 매핑은 주석 상태입니다.
+테스트벤치는 파형 관찰용이며 [파형 설정 파일](waveform/tb_fnd_behav.wcfg)을 포함합니다.
