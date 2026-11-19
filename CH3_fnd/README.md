@@ -1,10 +1,14 @@
-# CH3 · 4자리 7세그먼트 디스플레이 제어기
+# [CH 3] 4-digit Seven-Segment Display Controller
 
-# 1. EDA & Board
+---
 
-![Vivado 2020.2 및 Xilinx Basys-3](./readme_intro_img.png)
+## 1. EDA & Board
 
-# 2. Design Overview
+![Vivado 2020.2 및 Xilinx Basys-3](./verilog_readme_intro.png)
+
+---
+
+## 2. Design Overview
 
 8비트 정수(0~255)를 10진수로 변환하고, 4자리 7세그먼트 디스플레이에 한 자리씩 표시하는 제어기를 Verilog로 구현했습니다. 각 자리를 순서대로 켜면서 세그먼트 신호를 공유하는 **시분할 구동** 방식입니다.
 
@@ -16,23 +20,41 @@
 
 [RTL 코드](rtl/fnd_controller.v)
 
-# 3. Block Diagram
+---
+
+## 3. Block Diagram
 
 ![클록 분주와 자리 선택, 10진 자릿수 분리와 세그먼트 출력 경로](./fnd-controller.drawio.png)
 
-# 4. Simulation Scenario
+---
 
-Vivado 2020.2에서 [CH3_fnd.xpr](CH3_fnd.xpr)를 열고 **Run Simulation → Run Behavioral Simulation**을 실행합니다. [tb_fnd](tb/tb_fnd.v)는 100 MHz 클록을 만들고, 리셋을 10 ns 동안 인가한 뒤 입력을 `123`으로 유지하며 5.5 ms 동안 동작을 관찰하도록 구성되어 있습니다. 파형에서 아래 기대값을 비교하면 자리 선택과 숫자 출력이 함께 바뀌는지 확인할 수 있습니다.
+## 4. Simulation Scenario
 
-| 활성 자리 | 표시 숫자 | `fnd_com[3:0]` | `fnd_data[7:0]` |
+[CH3_fnd.xpr](CH3_fnd.xpr)를 열고 `tb_fnd`를 시뮬레이션 최상위 모듈로 선택해 **Run Behavioral Simulation → Run All**을 실행합니다. [테스트벤치](tb/tb_fnd.v)의 동작 순서는 다음과 같습니다.
+
+| 구간 | 입력 자극 | 확인 목적 |
+|---|---|---|
+| 0~10 ns | `reset = 1`, `fnd_in = 123` | 분주기와 자리 선택 카운터 초기화 |
+| 10 ns 이후 | `reset = 0`, `fnd_in = 123` 유지 | 네 자리의 표시 순환 확인 |
+| 리셋 해제 후 5.5 ms | `$stop` | 파형 관찰 종료 |
+
+클록은 10 ns 주기(100 MHz)입니다. 리셋 직후 자리 선택은 0이며, 해제 약 0.5 ms 뒤 첫 자리 전환이 발생합니다. 이후 약 1 ms마다 다음 자리가 선택됩니다.
+
+| 활성 자리 | 표시 숫자 | 기대 `fnd_com[3:0]` | 기대 `fnd_data[7:0]` |
 |---|---:|---|---|
 | 1의 자리 | 3 | `1110` | `8'hB0` |
 | 10의 자리 | 2 | `1101` | `8'hA4` |
 | 100의 자리 | 1 | `1011` | `8'hF9` |
 | 1000의 자리 | 0 | `0111` | `8'hC0` |
 
-테스트벤치는 파형 관찰용이며 [파형 설정 파일](waveform/tb_fnd_behav.wcfg)을 포함합니다.
+`fnd_com`이 바뀔 때 같은 자리의 숫자 패턴이 `fnd_data`에 나오는지 확인합니다. 네 자리는 정상 순환에서 4 ms마다 반복되며 표시 값은 앞자리 0을 포함한 `0123`입니다. 테스트벤치는 파형 관찰용이며 [파형 설정 파일](waveform/tb_fnd_behav.wcfg)을 포함합니다.
 
-# 5. Simulation Results
+---
 
-# 6. Demo
+## 5. Simulation Results
+
+---
+
+## 6. Demo
+
+---
