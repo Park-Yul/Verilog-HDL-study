@@ -16,9 +16,12 @@
   <File Type="BITSTR-BMM" Name="gates_bd.bmm"/>
   <File Type="ROUTE-METHODOLOGY-DRC" Name="gates_methodology_drc_routed.rpt"/>
   <File Type="BITSTR-MMI" Name="gates.mmi"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="gates_methodology_drc_routed.pb"/>
   <File Type="BITSTR-SYSDEF" Name="gates.sysdef"/>
+  <File Type="ROUTE-DRC-RPX" Name="gates_drc_routed.rpx"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
   <File Type="BITSTR-LTX" Name="gates.ltx"/>
+  <File Type="RCFI_FILE" Name="gates.rcfi"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <File Type="OPT-DRC" Name="gates_drc_opted.rpt"/>
   <File Type="OPT-HWDEF" Name="gates.hwdef"/>
@@ -48,11 +51,8 @@
   <File Type="PHYSOPT-DCP" Name="gates_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="gates_postroute_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="gates_postroute_physopt_bb.dcp"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="gates_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-DRC-RPX" Name="gates_drc_routed.rpx"/>
   <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="gates_methodology_drc_routed.rpx"/>
   <File Type="PDI-FILE" Name="gates.pdi"/>
-  <File Type="RCFI_FILE" Name="gates.rcfi"/>
   <File Type="CFI_FILE" Name="gates.cfi"/>
   <File Type="RNPI_FILE" Name="gates.rnpi"/>
   <File Type="NPI_FILE" Name="gates.npi"/>
