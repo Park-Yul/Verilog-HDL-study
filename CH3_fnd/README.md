@@ -1,6 +1,5 @@
 # [CH 3] 4-digit Seven-Segment Display Controller
 
----
 
 ## 1. EDA & Board
 

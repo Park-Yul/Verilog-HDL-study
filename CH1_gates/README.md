@@ -1,6 +1,6 @@
 # [CH 1] Logic Gates
 
----
+
 
 ## 1. EDA & Board
 

@@ -1,6 +1,5 @@
 # [CH 2] 8-bit Ripple Carry Adder
 
----
 
 ## 1. EDA & Board
 

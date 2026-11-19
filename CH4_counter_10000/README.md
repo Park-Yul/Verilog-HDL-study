@@ -1,6 +1,6 @@
 # [CH 4] Modulo-10000 Up-Down Counter
 
----
+
 
 ## 1. EDA & Board
 
