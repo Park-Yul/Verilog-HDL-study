@@ -9,3 +9,8 @@
 
 # vivado XDC file
 *.xdc
+
+#etc
+*.srcs/
+vitis_workspace/
+vitis_workspace_2/
